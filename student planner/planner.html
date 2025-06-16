@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Student Planner</title>
+  <link rel="stylesheet" href="planner.css" />
+</head>
+<body>
+
+  <header class="planner-header">
+    <h1>📘 My Student Planner</h1>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <main class="planner-grid">
+    
+    <!-- Calendar Section -->
+    <section id="calendar-section" class="card">
+      <h2>📅 Calendar</h2>
+      <div id="calendar"></div>
+    </section>
+
+    <!-- Timetable Section -->
+    <section id="timetable-section" class="card">
+      <h2>🕒 Timetable</h2>
+      <table id="timetable">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>8–9</th>
+            <th>9–10</th>
+            <th>10–11</th>
+            <th>11–12</th>
+            <th>1–2</th>
+            <th>2–3</th>
+            <th>3–4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Tuesday</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Wednesday</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Thursday</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Friday</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Tasks Section -->
+    <section id="tasks-section" class="card">
+      <h2 id="tasks-header">✅ Tasks <span class="collapse-icon">&#9650;</span></h2>
+      <div id="tasks-container">
+        <div class="task-input">
+          <input type="text" id="new-task-input" placeholder="Add a new task..." />
+          <button id="add-task-btn">Add</button>
+        </div>
+        <ul id="tasks-list"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- JavaScript files -->
+  <script src="calendar.js"></script>
+  <script src="tasks.js"></script>
+  <script src="timetable.js"></script>
+
+</body>
+</html>
