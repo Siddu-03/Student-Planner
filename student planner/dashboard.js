@@ -187,7 +187,7 @@ class Dashboard {
         this.updateStatElement('total-tasks', totalTasks);
         this.updateStatElement('completed-tasks', completedTasks);
         this.updateStatElement('overdue-tasks', overdueTasks);
-        this.updateStatElement('avg-grade', avgGrade);
+        this.updateStatElement('avg-grade', this.safeValue(avgGrade));
       });
     } catch (error) {
       console.error('Error updating stats:', error);
@@ -553,6 +553,11 @@ class Dashboard {
       this.progressChart.destroy();
       this.progressChart = null;
     }
+  }
+
+  // Utility methods for safe value display
+  safeValue(val) {
+    return (!isFinite(val) || isNaN(val)) ? 0 : val;
   }
 }
 

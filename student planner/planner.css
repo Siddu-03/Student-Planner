@@ -681,17 +681,21 @@ img {
   max-width: 1400px;
   margin: 0 auto;
   padding: var(--spacing-lg);
-  min-height: calc(100vh - 80px);
+  min-height: 0;
+  max-height: 100vh; /* Prevent infinite page growth */
+  overflow: auto;
 }
 
 /* View Management */
 .view {
   display: none;
   animation: fadeIn 0.3s ease-in-out;
+  min-height: 0; /* Prevent infinite page growth */
 }
 
 .view.active {
   display: block;
+  min-height: 0; /* Prevent infinite page growth */
 }
 
 @keyframes fadeIn {

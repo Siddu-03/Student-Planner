@@ -229,10 +229,10 @@ class GradesManager {
     const totalCredits = this.calculateTotalCredits();
     const avgGrade = this.calculateOverallAverage();
 
-    document.getElementById('overall-gpa').textContent = overallGPA.toFixed(2);
-    document.getElementById('semester-gpa').textContent = semesterGPA.toFixed(2);
+    document.getElementById('overall-gpa').textContent = isFinite(overallGPA) && !isNaN(overallGPA) ? overallGPA.toFixed(2) : '0.00';
+    document.getElementById('semester-gpa').textContent = isFinite(semesterGPA) && !isNaN(semesterGPA) ? semesterGPA.toFixed(2) : '0.00';
     document.getElementById('total-credits').textContent = totalCredits;
-    document.getElementById('avg-grade').textContent = avgGrade.toFixed(1);
+    document.getElementById('avg-grade').textContent = isFinite(avgGrade) && !isNaN(avgGrade) ? avgGrade.toFixed(1) : '0.0';
   }
 
   renderGradeChart() {
